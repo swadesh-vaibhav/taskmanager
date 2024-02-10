@@ -1,6 +1,6 @@
 package com.swadesh.taskmanager.taskmanager.entities;
 
-import java.util.Date;
+import java.sql.Date;
 
 import lombok.Data;
 

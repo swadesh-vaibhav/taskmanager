@@ -1,8 +1,7 @@
 package com.swadesh.taskmanager.taskmanager.services;
 
-import java.text.DateFormat;
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 
 import org.springframework.stereotype.Service;
 
@@ -13,12 +12,29 @@ public class TaskService {
     private ArrayList<TaskEntity> tasks = new ArrayList<>();
     private int taskId = 1;
 
-    void addTask(String title, String description, String deadline) {
+    public TaskEntity addTask(String title, String description, Date deadline) {
         TaskEntity  task = new TaskEntity();
         task.setId(taskId);
         task.setTitle(title);
         task.setDescription(description);
-        task.setDeadline(new Date(deadline)); //Validate that date format is correct.
+        task.setDeadline(deadline); //Validate that date format is correct.
+        task.setCompleted(false);
+        tasks.add(task);
+        taskId++;
 
+        return task;
+    }
+
+    public ArrayList<TaskEntity> getTasks() {
+        return tasks;
+    }
+
+    public TaskEntity getTaskById(int id) {
+        for (TaskEntity task : tasks){
+            if(task.getId() ==id){
+                return task;
+            }
+        }
+        return null;
     }
 }
