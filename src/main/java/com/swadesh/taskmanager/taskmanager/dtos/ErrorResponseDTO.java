@@ -1,14 +1,14 @@
 package com.swadesh.taskmanager.taskmanager.dtos;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-public class CreateTaskDTO {
-    String title;
-    String description;
-    String deadline;
+public class ErrorResponseDTO {
+    private String errorMessage;
 }

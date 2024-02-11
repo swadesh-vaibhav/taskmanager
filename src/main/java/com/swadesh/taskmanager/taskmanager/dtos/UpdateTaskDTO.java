@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class CreateTaskDTO {
-    String title;
+public class UpdateTaskDTO {
     String description;
     String deadline;
+    boolean completed;
 }
